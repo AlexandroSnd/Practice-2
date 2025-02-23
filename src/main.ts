@@ -2,7 +2,7 @@ import './style.css';
 import typescriptLogo from './typescript.svg';
 import viteLogo from '/vite.svg';
 import { setupCounter } from './counter.ts';
-import { Priority, Status, Todo } from './types.ts';
+import { Priority, Status, User } from './types.ts';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -24,16 +24,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
 
-type User = {
-  name: string;
-  status: Status;
-  todos: Todo[];
-
-  changeStatus(newStatus: Status): void;
-  addTodo(todo: string, priority?: Priority): void;
-  displayTodos(): void;
-  displayActiveTodos(): void;
-};
 
 const user: User = {
   name: '',
